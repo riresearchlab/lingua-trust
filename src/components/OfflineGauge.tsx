@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Cpu, Battery, HardDrive, Gauge, Smartphone, Monitor } from "lucide-react";
+import { Cpu, Battery, HardDrive, Gauge, Smartphone, Monitor, WifiOff } from "lucide-react";
 
 const devices = [
   { name: "Raspberry Pi 4", icon: Cpu, ram: "4GB", storage: "32GB", perf: 87, inference: "340ms", power: "5W" },
@@ -27,13 +27,17 @@ const OfflineGauge = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-6"
         >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted text-muted-foreground text-sm font-body mb-4">
+            <WifiOff className="w-4 h-4 text-accent" />
+            Interactive Demo
+          </div>
           <h2 className="heading-section text-foreground mb-4">
-            Offline-First Performance
+            The "Offline-First" Gauge
           </h2>
           <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
-            Our SLM runs at the speed of need — on hardware communities already have.
+            A live dashboard simulating real-world hardware. Watch as the SLM processes complex linguistic syntax with 0% Wi-Fi signal and minimal battery drain — at the speed of need.
           </p>
         </motion.div>
 
@@ -110,7 +114,7 @@ const OfflineGauge = () => {
             </div>
             <div className="bg-muted rounded-xl p-4 border border-border">
               <p className="font-body text-sm text-muted-foreground">
-                <span className="text-accent font-semibold">✓ Fully offline.</span> No internet required after initial model deployment. Updates sync opportunistically when connectivity is available.
+                <span className="text-accent font-semibold">✓ Fully offline.</span> The system remains 100% functional during internet blackouts. Updates sync opportunistically when connectivity is available.
               </p>
             </div>
           </motion.div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Vote, CheckCircle2, XCircle, Users, Clock, Shield } from "lucide-react";
+import { Vote, CheckCircle2, XCircle, Users, Clock, Shield, Landmark } from "lucide-react";
 
 interface Proposal {
   id: number;
@@ -17,8 +17,8 @@ interface Proposal {
 const initialProposals: Proposal[] = [
   {
     id: 1,
-    title: "Share agricultural terminology dataset with university researchers",
-    description: "Proposed use: Educational research on climate adaptation vocabulary in Zapotec languages.",
+    title: "Allow a 500-year-old oral history to be used for university research",
+    description: "Proposed use: A linguistics department requests access to digitized oral histories for a peer-reviewed study on historical migration patterns.",
     type: "educational",
     votesFor: 12,
     votesAgainst: 2,
@@ -29,7 +29,7 @@ const initialProposals: Proposal[] = [
   {
     id: 2,
     title: "License medicinal plant names for pharmaceutical company glossary",
-    description: "Proposed use: Commercial product labeling with proper attribution and royalty agreement.",
+    description: "Proposed use: Commercial product labeling with proper attribution and royalty agreement. Community retains veto rights on all downstream use.",
     type: "commercial",
     votesFor: 3,
     votesAgainst: 11,
@@ -40,7 +40,7 @@ const initialProposals: Proposal[] = [
   {
     id: 3,
     title: "Contribute oral histories to UNESCO preservation archive",
-    description: "Proposed use: Non-commercial cultural heritage documentation with full community credit.",
+    description: "Proposed use: Non-commercial cultural heritage documentation with full community credit. Restricted to community members only.",
     type: "educational",
     votesFor: 16,
     votesAgainst: 1,
@@ -76,14 +76,14 @@ const GovernanceVoting = () => {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted text-muted-foreground text-sm font-body mb-4">
-            <Shield className="w-4 h-4 text-accent" />
+            <Landmark className="w-4 h-4 text-accent" />
             Interactive Demo
           </div>
           <h2 className="heading-section text-foreground mb-4">
-            Community Consent Portal
+            Community Governance Demo
           </h2>
           <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
-            Tribal elders and community members vote on how datasets are used. Every decision is transparent, revocable, and sovereign.
+            Experience our "Tribal Elder Portal." Vote on whether a 500-year-old oral history should be used for a university research project or remain restricted to community members only. Every decision is transparent, revocable, and sovereign.
           </p>
         </motion.div>
 
