@@ -25,7 +25,7 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-body-lg text-muted-foreground mb-10 max-w-xl">
-              LinguaTrust creates Small Language Models (SLMs) that live on-device and stay offline, protecting Indigenous knowledge from digital extraction.
+              LinguaTrust isn't just a bridge between languages; it is a fortress for culture. We build specialized Small Language Models (SLMs) that live on-device, function entirely offline, and operate under community command. We are ending the era of digital extraction and replacing it with Digital Sovereignty.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -33,14 +33,14 @@ const HeroSection = () => {
                 href="#ethics"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-lg gradient-gold-shimmer text-accent-foreground font-body font-semibold text-base hover:opacity-90 transition-opacity"
               >
-                See the Ethics Charter
+                Read the Sovereignty Charter
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="#technology"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border-2 border-primary text-primary font-body font-semibold text-base hover:bg-primary hover:text-primary-foreground transition-colors"
               >
-                Explore the SLM Specs
+                Review SLM Technical Specs
               </a>
             </div>
           </motion.div>
@@ -55,7 +55,7 @@ const HeroSection = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src={heroImage}
-                alt="A young Indigenous person and an elder sharing knowledge through a tablet with a localized AI interface"
+                alt="A young Indigenous student and a community elder huddled over a ruggedized tablet in a rural setting, with the screen glow illuminating their faces showing a localized AI interface with native script"
                 width={1920}
                 height={1080}
                 className="w-full h-auto object-cover"

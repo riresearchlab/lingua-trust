@@ -1,30 +1,30 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Smartphone, Lock, Server, ShieldCheck, Wifi, WifiOff, Cpu, Zap } from "lucide-react";
+import { Smartphone, Lock, Server, ShieldCheck, Wifi, WifiOff, Cpu, Zap, Radio, ArrowDownToLine } from "lucide-react";
 
 const steps = [
   {
     icon: Smartphone,
-    label: "Local Training",
-    description: "The SLM trains on-device using community data. Voice, text, and cultural context never leave the village.",
+    label: "Local Node",
+    description: "A community-owned device (e.g., a Raspberry Pi) collects voice samples and text. All data stays on this hardware.",
     color: "bg-secondary text-secondary-foreground",
   },
   {
-    icon: Lock,
-    label: "Encryption",
-    description: "Only encrypted model weight updates are prepared for sharing — never raw data.",
+    icon: Cpu,
+    label: "On-Device Training",
+    description: "The model learns patterns locally. No raw audio or text ever leaves the hardware — only the knowledge of the pattern, never the content.",
     color: "bg-primary text-primary-foreground",
   },
   {
-    icon: Server,
-    label: "Federated Aggregation",
-    description: "A coordinator averages encrypted updates from multiple communities to improve the global model.",
+    icon: Lock,
+    label: "Encrypted Updates",
+    description: "Only mathematical 'weight updates' are encrypted and sent to the global server. The raw cultural data never crosses a border or enters a cloud.",
     color: "bg-accent text-accent-foreground",
   },
   {
-    icon: ShieldCheck,
-    label: "Data Stays Home",
-    description: "Communities receive improved model weights. No personal data ever leaves. Full sovereignty preserved.",
+    icon: Server,
+    label: "Global Refinement",
+    description: "The global model improves by aggregating encrypted updates and sends the smarter 'brain' back to the village. Zero raw data exchanged.",
     color: "bg-secondary text-secondary-foreground",
   },
 ];
@@ -40,15 +40,25 @@ const FederatedLearningSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-6"
         >
           <h2 className="heading-section text-primary-foreground mb-4">
-            Private Federated Learning
+            The "Data Stays Home" Architecture
           </h2>
-          <p className="text-body-lg text-primary-foreground/70 max-w-2xl mx-auto">
-            See how our models learn without extracting data. Toggle between federated and traditional approaches.
+          <p className="text-body-lg text-primary-foreground/70 max-w-3xl mx-auto">
+            We have re-engineered the standard AI training pipeline to prioritize privacy over central aggregation. Our technical framework ensures that sensitive cultural data never crosses a border or enters a cloud.
           </p>
         </motion.div>
+
+        {/* Interactive prompt */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center text-primary-foreground/50 font-body text-sm mb-8 italic"
+        >
+          Toggle the switch to see how your voice is transformed into an anonymous mathematical vector before leaving your hand.
+        </motion.p>
 
         {/* Toggle */}
         <div className="flex justify-center mb-12">
@@ -144,19 +154,32 @@ const FederatedLearningSection = () => {
           )}
         </AnimatePresence>
 
-        {/* Specs bar */}
+        {/* Technical Specifications */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="mt-16 mb-6 text-center"
+        >
+          <h3 className="font-heading text-2xl font-semibold text-primary-foreground mb-2">
+            Technical Specifications
+          </h3>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
+          className="grid grid-cols-2 md:grid-cols-5 gap-4"
         >
           {[
             { icon: ShieldCheck, label: "Zero-Cloud Dependency", value: "100%" },
             { icon: Zap, label: "Power Consumption", value: "< 10W" },
-            { icon: Cpu, label: "Runs on Raspberry Pi", value: "ARM64" },
+            { icon: Cpu, label: "Hardware Agnostic", value: "ARM64" },
             { icon: Lock, label: "Encryption Standard", value: "AES-256" },
+            { icon: Radio, label: "Translation Latency", value: "< 100ms" },
           ].map((spec) => (
             <div key={spec.label} className="bg-primary-foreground/5 backdrop-blur-sm rounded-xl p-4 text-center border border-primary-foreground/10">
               <spec.icon className="w-5 h-5 text-accent mx-auto mb-2" />
@@ -164,6 +187,28 @@ const FederatedLearningSection = () => {
               <div className="text-xs font-body text-primary-foreground/50 mt-1">{spec.label}</div>
             </div>
           ))}
+        </motion.div>
+
+        {/* Additional spec details */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+          className="mt-8 grid md:grid-cols-3 gap-4"
+        >
+          <div className="bg-primary-foreground/5 backdrop-blur-sm rounded-xl p-6 border border-primary-foreground/10">
+            <h4 className="font-heading text-sm font-bold text-accent mb-2 uppercase tracking-wider">Compute Efficiency</h4>
+            <p className="text-sm font-body text-primary-foreground/60">Optimized to run on &lt; 10W of power — fully compatible with small-scale solar arrays in off-grid communities.</p>
+          </div>
+          <div className="bg-primary-foreground/5 backdrop-blur-sm rounded-xl p-6 border border-primary-foreground/10">
+            <h4 className="font-heading text-sm font-bold text-accent mb-2 uppercase tracking-wider">Hardware Agnostic</h4>
+            <p className="text-sm font-body text-primary-foreground/60">High-performance inference on 5-year-old Android devices and low-spec ARM processors. No specialized hardware needed.</p>
+          </div>
+          <div className="bg-primary-foreground/5 backdrop-blur-sm rounded-xl p-6 border border-primary-foreground/10">
+            <h4 className="font-heading text-sm font-bold text-accent mb-2 uppercase tracking-wider">Speed of Need</h4>
+            <p className="text-sm font-body text-primary-foreground/60">Sub-100ms latency for real-time speech-to-speech translation without a satellite connection.</p>
+          </div>
         </motion.div>
       </div>
     </section>

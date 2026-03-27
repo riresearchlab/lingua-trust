@@ -1,31 +1,31 @@
 import { motion } from "framer-motion";
-import { ShieldOff, Home, Trash2, Coins, TreePine } from "lucide-react";
+import { ShieldOff, Home, Trash2, Coins, TreePine, ScrollText } from "lucide-react";
 
 const pillars = [
   {
     icon: ShieldOff,
-    title: "Non-Extractive",
-    description: "No data scraping. No surveillance capitalism. Our models learn from patterns, not from hoarding personal information.",
+    title: "Non-Extractive by Design",
+    description: "We do not scrape the web. We build datasets through intentional, compensated, and consensual partnerships. No data scraping. No surveillance capitalism.",
   },
   {
     icon: Home,
     title: "Local Ownership",
-    description: "Communities own the weights of their model. The AI that speaks your language belongs to your people — legally and technically.",
+    description: "Communities own the 'Weights' of their specific language models. They are the landlords of their own digital intelligence — legally and technically.",
   },
   {
     icon: Trash2,
-    title: "Right to Be Forgotten",
-    description: "Instant data revocation by the community. If a community decides to withdraw, their contribution is fully purged.",
+    title: "The Right to Be Forgotten",
+    description: "At any moment, a community can vote to revoke their data, triggering an instant 'forgetting' protocol in the global model. Full data sovereignty, always.",
   },
   {
     icon: Coins,
     title: "Economic Mobility",
-    description: "Local linguists and elders are paid as 'Data Sovereigns' — compensated fairly for their irreplaceable expertise.",
+    description: "We transform elders and local linguists into 'Data Sovereigns.' They are paid fair-trade wages to curate and validate the AI, turning linguistic preservation into a sustainable local economy.",
   },
   {
     icon: TreePine,
     title: "Intergenerational Design",
-    description: "Built for 100 years, not a 2-year VC cycle. Our architecture prioritizes durability, low maintenance, and community succession.",
+    description: "Our code is open-source and modular, built to be maintained by the next generation of indigenous technologists — not a distant corporate office. Designed for a 100-year horizon.",
   },
 ];
 
@@ -37,17 +37,21 @@ const EthicsCharter = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-6"
         >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted text-muted-foreground text-sm font-body mb-4">
+            <ScrollText className="w-4 h-4 text-accent" />
+            Ethics & Durable Economics
+          </div>
           <h2 className="heading-section text-foreground mb-4">
             The Sovereignty Charter
           </h2>
-          <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
-            Five pillars that define how we build, govern, and sustain LinguaTrust — for communities, by communities.
+          <p className="text-body-lg text-muted-foreground max-w-3xl mx-auto">
+            Our governance model is designed for a 100-year horizon, resisting the short-term pressures of venture capital cycles to protect the "Digital Commons." Five pillars define how we build, govern, and sustain LinguaTrust — for communities, by communities.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
           {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.title}
